@@ -531,6 +531,7 @@ main .container .right {
   background: var(--color-white);
   padding: var(--card-padding);
   border-radius: var(--card-border-radius);
+  box-shadow: 0 0 1rem var(--color-primary);
   width: 50%;
 }
 
@@ -687,6 +688,9 @@ MEDIA QUERY FOR SMALL LAPTOP AND BIG TABLETS
   .left .btn {
     display: none;
   }
+  .customize-theme .card{
+    width: 70vw;
+  }
 }
 
 @media screen and (max-width: 992px) {
@@ -725,5 +729,8 @@ MEDIA QUERY FOR SMALL LAPTOP AND BIG TABLETS
   }
   main .right {
     display: none;
+  }
+  .customize-theme .card{
+    width: 96vw;
   }
 } ;

@@ -8,6 +8,9 @@ const messages = document.querySelector('.messages');
 
 const message = document.querySelectorAll('.message');
 const messageSearchbox = document.querySelector('#message-search')
+//THEME
+const theme = document.querySelector('#theme');
+const themeModal = document.querySelector('.customize-theme');
 
 //remove class function
 
@@ -55,3 +58,19 @@ messageNotification.addEventListener('click',()=>{
 })
 
 messageSearchbox.addEventListener('keyup',searchMessage)
+
+
+const openModal = () =>{
+    themeModal.style.display = 'grid'
+}
+
+const closeModal = (e) =>{
+    if(e.target.classList.contains('customize-theme')){
+        themeModal.style.display='none';
+    changeActive();
+    }
+
+}
+
+themeModal.addEventListener('click',closeModal)
+theme.addEventListener('click',openModal)
