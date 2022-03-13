@@ -6,7 +6,10 @@ const menuItems = document.querySelectorAll('.menu-item')
 const messageNotification = document.getElementById('message-notification');
 const messages = document.querySelector('.messages');
 
-//remove class
+const message = document.querySelectorAll('.message');
+const messageSearchbox = document.querySelector('#message-search')
+
+//remove class function
 
 const changeActive = () =>{
     menuItems.forEach(item =>{
@@ -14,6 +17,20 @@ const changeActive = () =>{
     })
 }
 
+//search message function
+
+const searchMessage = () =>{
+    const val = messageSearchbox.value.toLowerCase();
+    console.log(val);
+    message.forEach(chat =>{
+        let name = chat.querySelector('h5').textContent.toLowerCase();
+        if(name.indexOf(val) != -1){
+            chat.style.display = 'flex';
+        }else{
+            chat.style.display = 'none';
+        }
+    })
+}
 
 menuItems.forEach(item =>{
     item.addEventListener('click', ()=>{
@@ -36,3 +53,5 @@ messageNotification.addEventListener('click',()=>{
     }, 2000);
     document.querySelector('#message-notification .notification-count').style.display = 'none';
 })
+
+messageSearchbox.addEventListener('keyup',searchMessage)
